@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:form/binding/controller_binding.dart';
 import 'package:form/view/home.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +13,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      initialBinding: ControllerBinding(),
       theme: ThemeData(
         // This is the theme of your application.
         //
