@@ -44,7 +44,7 @@ class CustomDropDown extends StatelessWidget {
                 .toList(),
             onChanged: (value) {},
           ),
-        )
+        ),
       ],
     );
   }
