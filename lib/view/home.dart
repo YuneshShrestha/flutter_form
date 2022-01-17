@@ -41,35 +41,33 @@ class _HomeState extends State<Home> {
                 //   labelText: "District",
                 //   placeHolder: "Select District",
                 // ),
-                Obx(() => ListView.builder(
-                      itemCount: courseController.courseList.length,
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemBuilder: (BuildContext context, int index) {
-                        return CheckboxListTile(
-                          value: courseController.courseList[index].isSelected,
-                          onChanged: (value) {
-                            print(value);
-                            courseController.courseList[index].isSelected =
-                                value;
-                            if (courseController.courseList[index].isSelected ==
-                                true) {
-                              courseController.addMyCourseList(courseController
-                                  .courseList[index].courseName
-                                  .toString());
-                            } else {
-                              courseController.removeMyCourseList(
-                                  courseController.courseList[index].courseName
-                                      .toString());
-                            }
-                            setState(() {});
-                          },
-                          title: Text(courseController
+                ListView.builder(
+                  itemCount: courseController.courseList.length,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (BuildContext context, int index) {
+                    return CheckboxListTile(
+                      value: courseController.courseList[index].isSelected,
+                      onChanged: (value) {
+                        print(value);
+                        courseController.courseList[index].isSelected = value;
+                        if (courseController.courseList[index].isSelected ==
+                            true) {
+                          courseController.addMyCourseList(courseController
                               .courseList[index].courseName
-                              .toString()),
-                        );
+                              .toString());
+                        } else {
+                          courseController.removeMyCourseList(courseController
+                              .courseList[index].courseName
+                              .toString());
+                        }
+                        setState(() {});
                       },
-                    )),
+                      title: Text(courseController.courseList[index].courseName
+                          .toString()),
+                    );
+                  },
+                ),
               ],
             )));
   }

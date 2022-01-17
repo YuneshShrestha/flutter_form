@@ -3,11 +3,11 @@ import 'package:get/get.dart';
 
 class CourseController extends GetxController {
   // var check_value = false.obs;
-  var myCourseList = [].obs;
+  var myCourseList = [];
   var courseList = [
-    Course(courseName: "C Programming", isSelected: true),
+    Course(courseName: "C Programming", isSelected: false),
     Course(courseName: "Web Development", isSelected: false),
-  ].obs;
+  ];
   void addMyCourseList(String data) {
     myCourseList.add(data);
   }
